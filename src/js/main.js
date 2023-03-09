@@ -3,7 +3,7 @@ import "./../css/style.css";
 const emailValidator = function () {
   const form = document.querySelector(".newsletter");
   const emailInput = document.querySelector(".newsletter__input");
-  const formError = document.querySelector(".form-error");
+  const formError = document.querySelector(".newsletter__error");
 
   const emailValidation = function (email) {
     const validEmail =
@@ -12,13 +12,13 @@ const emailValidator = function () {
   };
 
   const successSendEmail = function () {
-    form?.classList.remove("error");
+    form?.classList.remove("form-error");
     emailInput.value = "";
   };
 
   const showError = function (message) {
     formError.textContent = message;
-    form?.classList.add("error");
+    form?.classList.add("form-error");
   };
 
   form?.addEventListener("submit", (ev) => {
